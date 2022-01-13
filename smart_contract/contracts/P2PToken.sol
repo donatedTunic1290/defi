@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: DEFI
 
-pragma solidity 0.7.0; // Solidity compiler version
+pragma solidity 0.8.11; // Solidity compiler version
 import "./ERC20Interface.sol"; // ERC20 Interface
 import "./SafeMath.sol"; // ERC20 Interface
 
@@ -63,11 +63,8 @@ contract P2PToken is ERC20Interface {
      */
     function transferFrom(address _from, address _to, uint256 _value) public override returns (bool success) {
 
-        // reference
-        uint256 allowance = allowed[_from][msg.sender];
-
         // Check Balance
-        require(allowance >= _value, "insufficient allowance");
+        require(allowance(_from, msg.sender) >= _value, "insufficient allowance");
         require(tokenBalances[_from] >= _value, "invalid transfer amount");
 
         // transfer amout

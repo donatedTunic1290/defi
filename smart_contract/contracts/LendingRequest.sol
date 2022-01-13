@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: DEFI
 
-pragma solidity 0.7.0; // Solidity compiler version
+pragma solidity 0.8.11; // Solidity compiler version
 import "./ERC20Interface.sol"; // ERC20 Interface
 
 contract LendingRequest {

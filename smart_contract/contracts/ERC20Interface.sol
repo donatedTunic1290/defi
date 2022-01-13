@@ -1,11 +1,11 @@
 // SPDX-License-Identifier: DEFI
 
-pragma solidity 0.7.0; // Solidity compiler version
+pragma solidity 0.8.11; // Solidity compiler version
 
 // *********************** Interfaces - Starts ************************* //
 
 interface ERC20Interface {
-    
+
     /// @param _owner The address from which the balance will be retrieved
     /// @return balance The balance
     function balanceOf(address _owner) external view returns (uint256 balance);

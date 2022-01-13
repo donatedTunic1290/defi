@@ -1,10 +1,10 @@
 // SPDX-License-Identifier: DEFI
 
-pragma solidity 0.7.0; // Solidity compiler version
+pragma solidity 0.8.11; // Solidity compiler version
 import "./LendingRequest.sol";
 
 contract RequestFactory {
-    
+
     /**
      * @notice creates a new lendingRequest
      * @param _amount the amount the asker wants to borrow
@@ -21,12 +21,12 @@ contract RequestFactory {
         uint256 _collateral,
         uint256 _collateralCollectionTimeStamp
     ) public payable returns (address payable lendingRequest) {
-        
+
         // create new lendingRequest contract
-        lendingRequest = address(uint160(address(
+        lendingRequest = payable(address(uint160(address(
             new LendingRequest{value: msg.value}(
                 _origin, _amount, _paybackAmount,
-                _purpose, msg.sender, _token, _collateral, _collateralCollectionTimeStamp)
-        )));
+                _purpose, payable(msg.sender), _token, _collateral, _collateralCollectionTimeStamp)
+        ))));
     }
 }

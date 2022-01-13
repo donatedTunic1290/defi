@@ -1,7 +1,7 @@
 {
-  "name": "p2p-lending",
+  "name": "defi-p2p-lending",
   "version": "1.0.0",
-  "description": "This repository hosts a variety of smart contracts for a DAO (Decentralized Autonomous Organisation) focussing on delivering a decentralized p2p-lending platform on the Ethereum Blockchain. ",
+  "description": "DeFi Applicaiton Showing P2P Lending Scenario",
   "directories": {
     "test": "test"
   },
@@ -24,12 +24,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adorsys/p2p-lending.git"
+    "url": "git+https://github.com/donatedTunic1290/defi"
   },
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/adorsys/p2p-lending/issues"
-  },
-  "homepage": "https://github.com/adorsys/p2p-lending#readme"
+  "homepage": "https://github.com/donatedTunic1290/defi"
 }

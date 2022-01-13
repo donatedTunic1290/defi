@@ -1,6 +1,6 @@
 // SPDX-License-Identifier: DEFI
 
-pragma solidity 0.7.0; // Solidity compiler version
+pragma solidity 0.8.11; // Solidity compiler version
 
 // *********************** Interfaces - Starts ************************* //
 
@@ -55,7 +55,7 @@ contract P2PPlatform {
      * @param _purpose the reason you want to borrow ether
      */
     function ask(uint256 _amount, uint256 _paybackAmount, string memory _purpose, address payable _token, uint256 _collateralCollectionTimeStamp) public payable returns(bool success){
-        
+
         // Get if valid
         bool isValid = GovernanceInterface(governance).getIsValid();
         require(isValid, "Governance has stopped ask requests");
@@ -72,7 +72,7 @@ contract P2PPlatform {
             _amount,
             _paybackAmount,
             _purpose,
-            msg.sender,
+            payable(msg.sender),
             _token,
             msg.value,
             _collateralCollectionTimeStamp
@@ -102,7 +102,7 @@ contract P2PPlatform {
         // Validate Request
         require(validRequest[_lendingRequest], "Invalid Request");
 
-        bool success = LendingRequestInterface(_lendingRequest).lend(msg.sender);
+        bool success = LendingRequestInterface(_lendingRequest).lend(payable(msg.sender));
         require(success, "Lending failed");
 
         // Emit Event
@@ -119,7 +119,7 @@ contract P2PPlatform {
         // Checks
         require(validRequest[_lendingRequest], "Invalid Request");
 
-        bool success = LendingRequestInterface(_lendingRequest).payback(msg.sender);
+        bool success = LendingRequestInterface(_lendingRequest).payback(payable(msg.sender));
         require(success, "Payback failed");
 
         // Emit Event
