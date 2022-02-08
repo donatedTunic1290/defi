@@ -2,9 +2,14 @@
 
 pragma solidity 0.8.11; // Solidity compiler version
 import "./ERC20Interface.sol"; // ERC20 Interface
-import "./SafeMath.sol"; // ERC20 Interface
+import "./SafeMathLibrary.sol"; // ERC20 Interface
 
-contract P2PToken is ERC20Interface {
+/**
+ * @title Upgrad Token
+ * @dev Token contract to create a new ERC20 Token - UpgradToken
+ * @dev Not Upgradable
+ */
+contract UpgradToken is ERC20Interface {
 
     // State Variables
     using SafeMath for uint256;
@@ -16,7 +21,7 @@ contract P2PToken is ERC20Interface {
 
     // State Mappings
     mapping (address => uint256) private tokenBalances;                         // token balance of trustees
-    mapping (address => mapping (address => uint256)) public allowed;           // register of all permissions form one user to another
+    mapping (address => mapping (address => uint256)) public allowed;           // register of all permissions from one user to another
 
     constructor(
         uint256 _initialAmount,

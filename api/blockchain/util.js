@@ -11,9 +11,9 @@ async function isAddressValid(addresses){
   addresses.forEach(address => {
 
     // Check if Address is valid
-    var isValid = web3.utils.isAddress(address)
-
-    if (isValid == false){
+    const isValid = web3.utils.isAddress(address);
+  
+    if (isValid === false){
       throw new userException(userErrors.InvalidAddress)
     }
   });
@@ -36,8 +36,8 @@ async function getETHBalance(address) {
   await isAddressValid([address])
 
   // Get Balance
-  var balance = await web3.eth.getBalance(address)
-  balance = await web3.utils.fromWei(balance, 'ether')
+  let balance = await web3.eth.getBalance(address);
+  balance = web3.utils.fromWei(balance, 'ether')
 
   return balance
 

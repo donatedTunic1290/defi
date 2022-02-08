@@ -11,8 +11,9 @@
     "web3": "^1.0.0-beta.37"
   },
   "devDependencies": {
-    "ganache-cli": "^6.12.2",
-    "truffle": "^5.1.66"
+    "@openzeppelin/contracts-upgradeable": "^4.4.2",
+    "@openzeppelin/truffle-upgrades": "^1.12.0",
+    "ganache-cli": "^6.12.2"
   },
   "scripts": {
     "compile": "truffle compile",

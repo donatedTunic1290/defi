@@ -5,6 +5,9 @@ pragma solidity 0.8.11; // Solidity compiler version
 /**
  * @title SafeMath
  * @dev Unsigned math operations with safety checks that revert on error.
+ * @dev IMPORTANT: Starting 0.8.0 of solidity, math overflows are now handled by solidity itself
+        so the safemath library is NO LONGER REQUIRED! This implementation is effectively deprecated now.
+ * @dev Not Upgradable
  */
 library SafeMath {
     /**
