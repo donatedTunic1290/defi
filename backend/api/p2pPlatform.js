@@ -189,7 +189,7 @@ async function collect(req, res){
 
 }
 
-// HINT (Session 3) Do batch transaction via api from a single address with proper nonce
+// HINT (Session 3) Do batch transaction via backend from a single address with proper nonce
 async function askBatch(req, res){
 
     try{

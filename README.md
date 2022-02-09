@@ -8,9 +8,11 @@ The open ecosystem of the p2p-lending platform has the potential to offer cheape
 
 ## Built With
 
-- [Node 13](https://nodejs.org/en/)
-- [Truffle](https://truffleframework.com/truffle)
+- [Node 16](https://nodejs.org/en/)
+- [Hardhat](https://hardhat.org/getting-started/)
 - [Ganache](https://www.trufflesuite.com/ganache)
+- [ethers.js](https://docs.ethers.io/v5/)
+- [Waffle](https://getwaffle.io/)
 - [web3.js](https://web3js.readthedocs.io/en/1.0/getting-started.html)
 
 ## Prerequisites
@@ -157,7 +159,7 @@ export MNEMONIC="asd asd ...."
 To capture all blockchain transaction
 
 ```sh
-cd api
+cd backend
 node script/blockCrawler.js
 ```
 
