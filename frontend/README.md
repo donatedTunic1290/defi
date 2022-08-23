@@ -1,187 +1,27 @@
-# P2P-Lending
+# Defi
 
-## Table of Contents
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
 
-- [About the Project](#about-the-project)
-  - [Challenges](#challenges)
-  - [Built With](#built-with)
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation)
+## Development server
 
-<!-- ABOUT THE PROJECT -->
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## About The Project
+## Code scaffolding
 
-This repository hosts a variety of smart contracts for a DAO (Decentralized Autonomous Organisation) focussing on delivering a decentralized p2p-lending platform on the Ethereum Blockchain. This may very well develop into something completely different based on the direction taken by the DAO in the future. We are as excited as you are! ;-)
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-_A decentralized, smart contract based platform for p2p-lending on the Ethereum Blockchain can play the role of a bank in the process of lending money to one or more beneficiaries.
-The open ecosystem of the p2p-lending platform has the potential to offer cheaper lending contracts than traditional centralized institutions, while also enabling people all over the world to profit from a fair and transparent portfolio of products._
+## Build
 
-### Challenges
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
-To solve multiple challenges within such a substantial system, we are conductiong extensive research into Ethereum and other potential smart contract platforms as well as continue developing a modular system based on components solving those challenges one by one. The most pressing challenges to solve for such a system include:
+## Running unit tests
 
-- Proof of Identity
-- Decentralized management and progression of the ecosystem by a DAO
-- Staying within the bounds of Ethereum
-- Incentivization of the DAO ecosystem and its continuous use
-- Building financially profitable and inclusive products
-- Accessibility and Usability of the p2p-lending plattform and ecosystem
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-### Built With
+## Running end-to-end tests
 
-- [Node 10](https://nodejs.org/en/)
-- [Truffle](https://truffleframework.com/truffle)
-- [Vue.js](https://vuejs.org/)
-- [web3.js](https://web3js.readthedocs.io/en/1.0/getting-started.html)
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
-<!-- GETTING STARTED -->
+## Further help
 
-## Getting Started
-
-To get a local copy up and running follow these steps.
-
-### Prerequisites
-
-These are the requisites you need, in order to use the software and instructions, on how to install them.
-
-- [Node.js](https://nodejs.org/en/):
-
-  - macOS:
-    - Install [Homebrew](https://brew.sh/):
-      ```sh
-      /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-      ```
-    - Update Homebrew:
-      ```sh
-      brew update
-      ```
-    - Check if Homebrew is ready to brew:
-      ```sh
-      brew doctor
-      ```
-    - Install Node.js:
-      ```sh
-      brew install node
-      ```
-    - Test that Node.js was installed by running:
-      ```sh
-      node --version
-      ```
-  - Windows:
-    - Install [Chocolatey](https://chocolatey.org/install):
-      - via cmd.exe:
-        ```sh
-        @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
-        ```
-      - via PowerShell.exe:
-        ```sh
-        Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
-        ```
-    - Install Node.js:
-      ```sh
-      choco install nodejs
-      ```
-    - Test that Node.js was installed by running:
-      ```sh
-      node --version
-      ```
-
-- [npm](https://www.npmjs.com/)
-
-  - Install npm:
-
-    ```sh
-    npm install npm -g
-    ```
-
-  - Test that npm was installed by running:
-
-    ```sh
-    npm --version
-    ```
-
-- [Ganache](https://truffleframework.com/ganache)
-- [Truffle](https://truffleframework.com/truffle)
-  - Install Truffle:
-    ```sh
-    npm install truffle -g
-    ```
-  - Test that truffle was installed by running:
-    ```sh
-    truffle version
-    ```
-
-### Installation
-
-1. Clone the repo
-
-   ```sh
-   git clone https://github.com/adorsys/p2p-lending.git
-   ```
-
-2. Run Ganache on port 8545
-
-   ```sh
-   Ganache -> Settings -> Server -> Port Number -> 8545
-   ```
-
-3. Install dependencies
-
-   ```sh
-   npm install
-   ```
-
-4. Compile Smart Contracts
-
-   ```sh
-   truffle compile
-   ```
-
-5. Deploy Smart Contracts to local blockchain
-
-   ```sh
-   npm run migrate:dev
-   ```
-
-6. Switch to frontend folder
-
-   ```sh
-   cd frontend
-   ```
-
-7. Install frontend dependencies
-
-   ```sh
-   npm install
-   ```
-
-8. Start frontend
-
-   ```sh
-   npm start
-   ```
-
-9. Open the DApp in your favorite browser
-
-   ```sh
-   localhost:8080
-   ```
-
-
-# Troubleshoot
-
-## Failed at the scrypt@6.0.3 install script.
-
-```sh
-sudo npm install github:barrysteyn/node-scrypt#fb60a8d3c158fe115a624b5ffa7480f3a24b03fb
-OR
-sudo npm i web3
-```
-
-## Node Sass does not yet support your current environment: Linux 64-bit with Unsupported runtime (83)
-
-```
-sudo npm rebuild node-sass
-```
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

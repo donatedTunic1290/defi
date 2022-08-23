@@ -38,6 +38,21 @@ contract Governance is Initializable {
 
     }
 
+    function enableFlag() external returns(bool _success){
+
+        // Increment
+        currentFlags += 1;
+
+        // Check
+        if (currentFlags > flaggingThreshold){
+            isPlatformEnabled = true;
+            currentFlags = 0;
+        }
+
+        return true;
+
+    }
+
     // TODO: Add modifier to control who can access this function
     function changePlatformState(bool newState) external returns(bool _success){
         isPlatformEnabled = newState;

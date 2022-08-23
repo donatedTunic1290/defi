@@ -6,26 +6,26 @@
 import {ethers, upgrades} from "hardhat";
 
 async function upgrade() {
-  // Hardhat always runs the compile task when running scripts with its command
-  // line interface.
-  //
-  // If this script is run directly using `node` you may want to call compile
-  // manually to make sure everything is compiled
-  // await hre.run('compile');
-  
-  const GOVERNANCE_ADDRESS = "0xCf7Ed3AccA5a467e9e704C703E8D87F634fB0Fc9";
-  
-  // 1. Upgrade Governance Contract
-  const GovernanceV2 = await ethers.getContractFactory("Governance");
-  const governance = await upgrades.upgradeProxy(GOVERNANCE_ADDRESS, GovernanceV2);
-  
-  console.log("Governance Contract Upgraded. Contract address is: ", governance.address);
-  
+	// Hardhat always runs the compile task when running scripts with its command
+	// line interface.
+	//
+	// If this script is run directly using `node` you may want to call compile
+	// manually to make sure everything is compiled
+	// await hre.run('compile');
+	
+	const GOVERNANCE_ADDRESS = "0x347329051CA02e569F3BC9A03B96e16ED07B9fa4";
+	
+	// 1. Upgrade Governance Contract
+	const GovernanceV2 = await ethers.getContractFactory("Governance");
+	const governance = await upgrades.upgradeProxy(GOVERNANCE_ADDRESS, GovernanceV2);
+	
+	console.log("Governance Contract Upgraded. Contract address is: ", governance.address);
+	
 }
 
 // We recommend this pattern to be able to use async/await everywhere
 // and properly handle errors.
 upgrade().catch((error) => {
-  console.error(error);
-  process.exitCode = 1;
+	console.error(error);
+	process.exitCode = 1;
 });

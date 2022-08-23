@@ -5,8 +5,8 @@ const config = require("../config/config")
 
 
 // Logger Config
-var { splat, combine, timestamp, printf } = winston.format;
-var myFormat = printf(({ timestamp, level, message, meta }) => {
+const {splat, combine, timestamp, printf} = winston.format;
+const myFormat = printf(({timestamp, level, message, meta}) => {
     return `${timestamp} | ${level} | ${message}`;
 });
 
@@ -20,8 +20,8 @@ function MyLogger(category, logPath) {
 MyLogger.prototype.CreateLogger = function () {
 
     if (config.logs.fileLogs){
-        var finalLogPath = this.logPath + new Date().toISOString().split('T')[0]
-
+        const finalLogPath = this.logPath + new Date().toISOString().split('T')[0];
+    
         this.logger = winston.createLogger({
             level: 'info',
             format: combine(
@@ -112,7 +112,7 @@ MyLogger.prototype.logRequest = async function (req){
     }
 
     // Log
-    this.LogMessage("Request : " + JSON.stringify(reqDoc))
+    await this.LogMessage("Request : " + JSON.stringify(reqDoc))
 
     return true
 
@@ -124,12 +124,12 @@ MyLogger.prototype.logResponse = async function (response){
     this.CreateLogger()
 
     // Log
-    this.LogMessage("Response : " + JSON.stringify(response))
+    await this.LogMessage("Response : " + JSON.stringify(response))
 
 }
 
 // Global
-var apiLogger = new MyLogger(config.logs.api.category, config.logs.api.path)
+const apiLogger = new MyLogger(config.logs.api.category, config.logs.api.path);
 
 module.exports = {
     MyLogger,

@@ -22,17 +22,17 @@ These are the requisites you need, in order to use the software and instructions
 ### NodeJS and NPM
 
 ```sh
-curl -sL https://deb.nodesource.com/setup_12.x -o nodesource_setup.sh
+curl -sL https://deb.nodesource.com/setup_16.x -o nodesource_setup.sh
 sudo bash nodesource_setup.sh
 sudo apt install nodejs
 ```
 ### Ganache
 
 Download it form this link https://truffleframework.com/ganache
-### Truffle
+### Hardhat
 
 ```sh
-npm install truffle -g
+npm install --save-dev hardhat
 ```
 
 ## Installation
@@ -49,7 +49,7 @@ git clone <Current_URL>
 Ganache -> Settings -> Server -> Port Number -> 8545
 ```
 
-### Go to smart_contract folder and Install dependencies
+### Go to smart-contract-hardhat folder and Install dependencies
 
 ```sh
 npm install
@@ -58,39 +58,32 @@ npm install
 ### Compile Smart Contracts
 
 ```sh
-truffle compile
+hh compile
 ```
 
-### Deploy Smart Contracts to local blockchain
+### Deploy Smart Contracts to Hardhat Network
 
 ```sh
-npm run migrate:dev
+hh run scripts/deploy.ts
 ```
 
-### Create Test Cases
-
-**Important** : Run this only if you want to create new test cases. 
-
-Example :
-```
-truffle create test AskRequest
-```
+### Run Test Cases
 
 ### Run Test
 
 ```sh
-npm run test
+hh test
 ```
 
 ## Backend
 
-### Update Smart Contract address in config/development.js (get this from the ganache gui or console output)
+### Update Smart Contract address in config/development.js (get this from console output)
 
 config.smartContractAddress.p2pToken
 
 config.smartContractAddress.p2pPlatform
 
-### Go to api folder and Install dependencies
+### Go to backend folder and Install dependencies
 
 ```sh
 sudo npm install
@@ -122,11 +115,9 @@ https://www.getpostman.com/collections/bab6a07226f6791e2eda
 
 ## Deploying the Smart contract (Manually)
 
-1. P2PToken.sol
-2. RequestFactory.sol
+1. UpgradToken.sol
 3. Governance.sol
-4. P2PPlatform.sol
-
+4. DeFiPlatform.sol
 
 ## Understand the Smart contract
 
@@ -135,7 +126,7 @@ https://www.getpostman.com/collections/bab6a07226f6791e2eda
 3. Give Token approval from Lender to above address (same amount as asked)
 4. Call Lend Function from Lender
 5. Transfer some extra token to asker so that he can payback
-6. Payback from lender, Colletral will come back
+6. Payback from lender, Collateral will come back
 7. Collect Collateral if not paid before deadline
 8. Cancel Request before Lender pay
 9. Change is Valid from upVote from Governance Contract
@@ -163,67 +154,16 @@ cd backend
 node script/blockCrawler.js
 ```
 
-# Upgradable Smart Contract Demo
-
-Move to upgradable_smart_contract_demo folder.
-
-## Install Open Zepplelin Cli
-
-```
-npm install -g @openzeppelin/cli
-oz --version
-```
-
-## ## (Optional) Initialize Openzeppelin Env (one time only)
-
-This is already done in project. However if you want to do it from scratch run below commands :
-
-```
-npm init -y
-oz init
-npm install @openzeppelin/upgrades --save
-```
-
-## Compile Contract
-
-```
-oz compile
-```
-## Deploy Contract
-
-**Important** : Delete .openzeppelin/dev-* file before starting from scratch.
-
-```
-oz create
-```
-
-## Interact with Contract
-
-```
-oz call
-oz send-tx
-```
-
-## Upgrade Contract
-
-Change some code and run below
-
-```
-oz upgrade
-```
-
 # Understand the Defi app architecture
 
 1. Smart contract creation
-2. Smart contract deployment (truffle)
-3. Get the JSON builds (ABI files)
+2. Smart contract deployment (Hardhat)
+3. Get the JSON artifacts (ABI files)
 4. Create your blockchain connection (web3)
 5. Create your smart contract object (contractObj -> ABI and Smart Contract Address)
 6. Interact with the contract
 	1. Read : .call() 
 	2. Write : RawTransaction(APP work -> FE/BE) -> SignedTransaction(Wallet like metamask) -> Broadcast(Wallet like metamask)
-
-
 
 # Troubleshoot
 
@@ -234,11 +174,6 @@ sudo npm install github:barrysteyn/node-scrypt#fb60a8d3c158fe115a624b5ffa7480f3a
 OR
 sudo npm i web3
 ```
-## Cannot read property 'addFunction' of undefined
-
-```sh
-sudo npm update truffle
-```
 
 ## Invalid Sender Error on Ropsten network in API
 
@@ -246,10 +181,4 @@ https://github.com/ChainSafe/web3.js/issues/2915
 
 ```sh
 sudo npm i ethereumjs-tx@1.3.7
-```
-
-Code Changes in signTransaction()
-
-```
-let tx = new Tx(rawTxObject); for Version 1.3.7
 ```

@@ -1,15 +1,18 @@
 {
-  "name": "defi-p2p-lending",
+  "name": "defi-platform",
   "version": "1.0.0",
-  "description": "DeFi Applicaiton Showing P2P Lending Scenario",
-  "author": "Aakash Bansal",
+  "description": "Upgrad DeFi Platform",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Aakash Bansal <connect@aakashbansal.com> (https://www.aakashbansal.com/)",
   "license": "ISC",
-  "homepage": "https://github.com/donatedTunic1290/defi",
   "devDependencies": {
     "@nomiclabs/hardhat-ethers": "^2.0.4",
     "@nomiclabs/hardhat-etherscan": "^2.1.8",
     "@nomiclabs/hardhat-waffle": "^2.0.2",
-    "@openzeppelin/contracts-upgradeable": "^4.4.2",
+    "@openzeppelin/contracts-upgradeable": "^4.5.0",
     "@openzeppelin/hardhat-upgrades": "^1.14.0",
     "@typechain/ethers-v5": "^7.2.0",
     "@typechain/hardhat": "^2.3.1",
@@ -32,10 +35,10 @@
     "hardhat": "^2.8.3",
     "hardhat-gas-reporter": "^1.0.7",
     "prettier": "^2.5.1",
-    "prettier-plugin-solidity": "^1.0.0-beta.19",
+    "prettier-plugin-solidity": "^1.0.0-beta.13",
     "solhint": "^3.3.6",
     "solidity-coverage": "^0.7.18",
-    "ts-node": "^10.4.0",
+    "ts-node": "^10.5.0",
     "typechain": "^5.2.0",
     "typescript": "^4.5.5"
   }

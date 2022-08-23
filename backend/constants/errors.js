@@ -26,7 +26,7 @@ const validationError = function (array) {
 }
 
 // User Errors
-var userErrors = {}
+const userErrors = {};
 userErrors.oopsSomethingWentWrong = new ErrorMessage("Oops! Something went wrong", 500)
 userErrors.InvalidAddress = new ErrorMessage("Invalid Address", 400);
 

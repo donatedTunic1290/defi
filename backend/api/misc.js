@@ -15,7 +15,7 @@ async function ping(req, res){
         let response = await util.successResponse({success:refStrings.success})
 
         // Log Response
-        apiLogger.logResponse(response)
+        await apiLogger.logResponse(response)
 
         // Send Response
         res.status(200).send(response)

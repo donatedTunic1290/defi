@@ -4,7 +4,7 @@ const config = require("../config/config")
 const util = require("../tools/util")
 const Web3 = require("web3")
 const web3 = new Web3(new Web3.providers.HttpProvider(config.blockchain.url))
-const p2pPlatform = require("../blockchain/smartContract/P2PPlatform").p2pPlatform
+const p2pPlatform = require("../blockchain/connectors/DefiPlatform").p2pPlatform
 
 
 async function main(txHash){

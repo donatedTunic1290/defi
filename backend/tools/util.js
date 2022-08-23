@@ -38,16 +38,16 @@ async function handleErrorResponse(exception, res){
   if(exception instanceof userException){
       statusCode = exception.statusCode
       response = await errorResponse(exception.message, exception.statusCode)
-  }else{ // Internal Server Error
+  } else{ // Internal Server Error
       statusCode = userErrors.oopsSomethingWentWrong.statusCode
       response = await errorResponse(userErrors.oopsSomethingWentWrong.message, userErrors.oopsSomethingWentWrong.statusCode)
   }
 
   // Log error
-  apiLogger.LogError(exception)
+  await apiLogger.LogError(exception)
 
   // Log Response
-  apiLogger.logResponse(response, statusCode)
+  await apiLogger.logResponse(response, statusCode)
 
   // Send Response
   res.status(statusCode).send(response)
@@ -75,9 +75,9 @@ function range(start, stop, step) {
   if ((step > 0 && start >= stop) || (step < 0 && start <= stop)) {
     return [];
   }
-
-  var result = [];
-  for (var i = start; step > 0 ? i < stop : i > stop; i += step) {
+  
+  const result = [];
+  for (let i = start; step > 0 ? i < stop : i > stop; i += step) {
     result.push(i);
   }
 

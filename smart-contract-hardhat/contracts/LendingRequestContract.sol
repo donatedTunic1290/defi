@@ -68,7 +68,6 @@ contract LendingRequest {
             must not be sponsored by the lender themselves
             lender must have given this contract enough allowance to transfer tokens on their behalf
          */
-
         // Check
         require(_lender != asker, "Invalid Lender");
         require(!moneyLent, "Money Already Lent");
@@ -120,8 +119,8 @@ contract LendingRequest {
         require(ERC20Interface(token).transferFrom(_asker, lender, paybackAmount), "Transfer Failed");
 
         // Remove collateral
-        _asker.transfer(address(this).balance);
         collateral -= address(this).balance;
+        _asker.transfer(address(this).balance);
 
         // Set Data
         debtSettled = true;

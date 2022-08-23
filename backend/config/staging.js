@@ -4,7 +4,7 @@
 var path = require('path');
 var config = {}
 var projectDirectory = path.resolve(__dirname, "..")
-var smartContractDirectory = path.resolve(__dirname, "../../smart_contract")
+var smartContractDirectory = path.resolve(__dirname, "../../smart-contract-hardhat")
 
 // Enviornment
 config.env = 'staging'
@@ -17,20 +17,20 @@ config.server.port = 5001
 
 /******************** Blockchain *************************/
 config.blockchain = {}
-config.blockchain.url = "https://ropsten.infura.io/v3/" // Put key here
+config.blockchain.url = "https://ropsten.infura.io/v3/4415da9fbb1f4cbfa0d0774e370b07f5" // Put key here
 config.blockchain.chainId = "3"
 /******************** Blockchain *************************/
 
 /******************** Smart Contract *************************/
 config.smartContract = {}
-config.smartContract.p2pToken = {}
-config.smartContract.p2pToken.address = "0xB2c3e3446b8Ab705130e3AF2d862326F9BB027c6"
-config.smartContract.p2pToken.gasLimit = 100000
-config.smartContract.p2pToken.buildPath = smartContractDirectory + "/build/contracts/P2PToken.json"
-config.smartContract.p2pPlatform = {}
-config.smartContract.p2pPlatform.address = "0x5C55731Ae0EfCf9966297167c3C3034bdfB18769"
-config.smartContract.p2pPlatform.gasLimit = 2000000
-config.smartContract.p2pPlatform.buildPath = smartContractDirectory + "/build/contracts/P2PPlatform.json"
+config.smartContract.upgradToken = {}
+config.smartContract.upgradToken.address = "0xAce473f3f3650689098248D04C896Bd744c3a646"
+config.smartContract.upgradToken.gasLimit = 100000
+config.smartContract.upgradToken.buildPath = smartContractDirectory + "/artifacts/contracts/1_UpgradTokenContract.sol/UpgradToken.json"
+config.smartContract.defiplatform = {}
+config.smartContract.defiplatform.address = "0x22Dd6357FB3c23f0fe777Bc4569Bc8216088C841"
+config.smartContract.defiplatform.gasLimit = 2000000
+config.smartContract.defiplatform.buildPath = smartContractDirectory + "/artifacts/contracts/3_DefiPlatformContract.sol/DefiPlatform.json"
 /******************** Smart Contract *************************/
 
 /******************** Wallet *************************/
