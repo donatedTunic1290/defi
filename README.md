@@ -111,7 +111,7 @@ config.blockchain.chainId = {CHAIN_ID} (Ropsten - 3)
 
 ## API Document
 
-https://www.getpostman.com/collections/bab6a07226f6791e2eda
+https://documenter.getpostman.com/view/1998368/2s93Y3uL7A
 
 ## Deploying the Smart contract (Manually)
 
